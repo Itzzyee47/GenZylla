@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSA_LandingPage</title>
+    <link rel="stylesheet" href="../static/css/landing.css">
+</head>
+<body>
+    <section>
+
+        <nav>
+            <div class="logo">LSA_Chatbot</div>
+
+            <div class="pages">
+                <div class="p" >Home</div>
+                <div class="p"  onclick="goto('/pending')">About</div>
+                <div class="p" onclick="goto('/pending')">Help</div>
+                <div class="p" onclick="goto('/chat')">Chat</div>
+            </div>
+
+            <div class="sign">
+                <div class="signIn" onclick="goto('/pending')">Sign in</div>
+                <div class="signUp" onclick="goto('/pending')">Sign up</div>
+            </div>
+        </nav>
+        
+        <div class="welcome">
+           <div class="welcomeText">
+            <h1 class="I1">Hi there stranger!</h1>
+            <h3 class="I2"> Welcome to Landmark's Student Assistant ChatBot,</h3>
+            <div class="prase">
+                Sign up for a world of fun and learning with Landmark's AI chatbot. <br>
+                For all your questions concering the institude Landmark, sign up and ask here.
+            </div>
+            <button id="startBTN" onclick="goto('/chat')">
+                Get started
+            </button>
+           </div>
+           <div class="welImg">
+                <img src="../static/img/girl.png" alt="">
+                <div class="message1">Hi there!</div>
+                <div class="message2"> Hello, what can i study in Landmark</div>
+                <div class="message1" style="top: 45%;">There are a varity of courses we offer, what are you into</div>
+                <div class="message2" style="top: 55%;max-width: 180px;"> I love animation and I'm good at computer</div>
+           </div>
+        </div>
+    </section>
+
+    
+</body>
+<script>
+    function goto(site){
+        window.location.assign(site);
+    }
+</script>
+</html>

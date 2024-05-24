@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Zylla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/chatpage.css">
+</head>
+<body>
+    <div class="h1">
+        Zylla<small>g_0.1</small>
+    </div>
+    <p style="font-size: 0.8rem; padding:2px;">
+        Hi there! 👋It's nice to meet you.
+        I'm Zylla, your friendly student assistant chatbot. <br> 
+        How can I help you today? 😊 Are you looking for information <br> 
+        about Landmark College or need help with some research? Let me know! 
+    </p>
+    <div class="chat-container">
+        <div class="chat-history" id="chat-history">
+            </div>
+        <form class="chat-input" method="post" id="message-form">
+            <input type="text" id="user-message" name="user-message" placeholder="Type your message here">
+            <button id="send-button" type="submit">Send</button>
+        </form>
+    </div>
+    <div class="side-bar" style="color: white;">
+        <div class="topOptions">
+            <i class="fa fa-bars fa-2x" aria-hidden="true" style="margin-top: 30px;"></i>
+            <div><i class="fa fa-plus fa-2x" style="margin-top: 30px;"></i> </div><br>
+        </div>
+        <div class="bottomOptions">
+            <div><i class="fa fa-gear fa-2x"></i> </div><br>
+           <div style="margin-bottom: 30px;" onclick="goto('/')"> <i class="fa fa-home fa-2x"></i></div>
+        </div>
+    </div>
+    <script>
+        function goto(site){
+            window.location.assign(site);
+        }
+    </script>
+    <script src="../static/js/chatpage.js"></script>
+</body>
+</html>

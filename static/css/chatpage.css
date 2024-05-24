@@ -1,0 +1,110 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.h1{
+    margin: 10px 0 1px;
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px #00000085;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(45deg, #ef00ffbf, rgb(7 164 255 / 36%));
+}
+small{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 0.6rem;
+    color: black;
+    -webkit-text-stroke: none;
+    background-clip: none; background-image: none;
+}
+i:hover{
+    cursor: pointer;
+}
+.chat-container {
+    width: 67%;
+    height: 80vh;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.chat-history {
+    height: auto;
+    min-height: 60%;
+    max-height: 80%;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+}
+
+.user-message {
+    text-align: right;
+}
+
+.model-message {
+    text-align: left;
+}
+
+.message-content {
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.user-message .message-content {
+    background-color: #ddd;
+}
+
+.model-message .message-content {
+    background-color: #f5f5f5;
+}
+
+.chat-input {
+    display: flex;
+    height: 60px;
+}
+.side-bar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: -webkit-fill-available;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: blueviolet;
+    width: 5%;
+}
+#user-message {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+
