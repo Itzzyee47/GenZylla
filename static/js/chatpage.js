@@ -25,10 +25,10 @@ event.preventDefault();
   }
   userMessageInput.value = ""; // Clear user input after sending
 
-  // Simulate a model response (replace with actual logic)
-  var modelResponse;
+  // Model response 
+  var modelResponse = "I am not the real model but a simulation of it and your question was: "+userMessage;
   //asynchronus request sent to backend...
-fetch('/getResponds', {method: 'POST', 
+fetch('/getRespond', {method: 'POST', 
 headers:{'Content-Type':'application/x-www-form-urlencoded'}, 
 
 body: 'message=' + encodeURIComponent(userMessage)
@@ -71,10 +71,10 @@ body: 'message=' + encodeURIComponent(userMessage)
   if (typeWriter) {
     typeWriter(modelResponse, modelMessageElement.querySelector('.message-content'));
     
-  } else {
+  } 
     updateAndSaveChatHistory(userMessageElement.outerHTML); // Save user message with HTML
     updateAndSaveChatHistory(modelMessageElement.outerHTML); // Save model message with HTML
-  }
+  
 
   
 
