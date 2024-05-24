@@ -28,7 +28,7 @@ event.preventDefault();
   // Model response 
   var modelResponse = "I am not the real model but a simulation of it and your question was: "+userMessage;
   //asynchronus request sent to backend...
-fetch('/getRespond', {method: 'POST', 
+fetch('/getResponds', {method: 'POST', 
 headers:{'Content-Type':'application/x-www-form-urlencoded'}, 
 
 body: 'message=' + encodeURIComponent(userMessage)
