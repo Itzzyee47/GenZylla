@@ -71,9 +71,10 @@ body: 'message=' + encodeURIComponent(userMessage)
   if (typeWriter) {
     typeWriter(modelResponse, modelMessageElement.querySelector('.message-content'));
     
-  } 
+  }else{
     updateAndSaveChatHistory(userMessageElement.outerHTML); // Save user message with HTML
     updateAndSaveChatHistory(modelMessageElement.outerHTML); // Save model message with HTML
+  }
 
 });
 
