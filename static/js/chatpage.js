@@ -26,7 +26,7 @@ event.preventDefault();
   userMessageInput.value = ""; // Clear user input after sending
 
   // Model response 
-  var modelResponse = "I am not the real model but a simulation of it and your question was: "+userMessage;
+  var modelResponse;
   //asynchronus request sent to backend...
 fetch('/getResponds', {method: 'POST', 
 headers:{'Content-Type':'application/x-www-form-urlencoded'}, 
@@ -74,9 +74,6 @@ body: 'message=' + encodeURIComponent(userMessage)
   } 
     updateAndSaveChatHistory(userMessageElement.outerHTML); // Save user message with HTML
     updateAndSaveChatHistory(modelMessageElement.outerHTML); // Save model message with HTML
-  
-
-  
 
 });
 

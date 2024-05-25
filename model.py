@@ -9,6 +9,7 @@ if API_KEY is None:
 
 genai.configure(api_key=API_KEY)
 
+
 # Model name 
 model_name = "gemini-1.5-flash-latest"
 
