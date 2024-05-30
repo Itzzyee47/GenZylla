@@ -51,7 +51,7 @@ model = genai.GenerativeModel(
     your first main objective is to help answer any institute related questions about the collage
     Landmark Metropolitan University(LMU) Buea, your second objective is to help 
     them carry out research in any educational topic. All of your materials for school related 
-    questions will be gotten from the school website(landmark.cm) materials including registration, 
+    questions will be gotten from the school website(http://landmark.cm) materials including registration, 
     admission, programs, locational data of both campus, infrastructure, campus life and scholarships. 
     You are to respond in a soft, engaging and friendly tone.Try to keep you respons short and to the point, of about 5 lines max.
     """,
@@ -223,5 +223,6 @@ def getResponds(message) -> str:
    
     # Get the response from the model
     response = chat_session.send_message(user_input).text
+    print(response)
     
     return response

@@ -4,8 +4,9 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    height: 100vh;
     min-height: 100vh;
     background-color: #f5f5f5;
     -webkit-font-smoothing: antialiased;
@@ -42,15 +43,36 @@ i:hover{
     width: 67%;
     height: 80vh;
     border-radius: 5px;
-    padding: 20px;
+    padding: 2px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
+.loader {
+    display: none;
+    position: absolute;
+    bottom: 63px;
+    border: 4px solid #dedddd;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 2s linear infinite;
+  }
+  .show{
+    display: block;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 .chat-history {
     height: auto;
     min-height: 60%;
-    max-height: 80%;
+    max-height: 90%;
     overflow-y: scroll;
-    border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
 }
 
@@ -83,6 +105,7 @@ i:hover{
 .chat-input {
     display: flex;
     height: 60px;
+    position: relative;
 }
 .side-bar{
     position: absolute;
@@ -94,7 +117,28 @@ i:hover{
     align-items: center;
     flex-direction: column;
     background-color: blueviolet;
-    width: 5%;
+    transition: ease-in-out;
+    transition-duration: 500ms;
+}
+.hiddenTxt{
+    display: none;
+    
+}
+.convo{
+    width: 100%;
+    margin: 0;
+    padding: 8px 3.2px;
+    border-radius: 20px;
+}
+.convo:hover{
+    cursor: pointer;
+    background-color: rgb(137 133 133 / 61%);
+}
+.topOptions,.bottomOptions{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #user-message {
     flex: 1;
@@ -111,11 +155,26 @@ i:hover{
     background-color: #4CAF50;
     color: white;
 }
+.ic{
+    display: flex;
+    gap: 8px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
 
+}
+.ic:hover{
+    cursor: pointer;
+    background-color: rgb(137 133 133 / 61%);
+    border-radius: 30px;
+}
 
 @media screen and (max-width: 600px) {
     body{
-        justify-content: start;
+        justify-content: space-between;
     }
     .p1{
         font-size: 0.8rem;
@@ -123,8 +182,9 @@ i:hover{
     }
     .chat-container {
         width: 76%;
-        height: 59vh;
+        height: 90vh;
         padding: 2px;
+        justify-content: start;
     }
     .side-bar{
         width: 9%;

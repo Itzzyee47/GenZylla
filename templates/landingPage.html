@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LSA_LandingPage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/css/landing.css">
 </head>
 <body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Help</a>
+        <a href="#">Chat</a>
+        <div class="sign" style="display: block;">
+            <div class="signIn" onclick="document.getElementById('id01').style.display='flex';closeNav()">Sign in</div>
+            <div class="signUp" onclick="document.getElementById('id02').style.display='flex';closeNav()">Sign up</div>
+        </div>
+      </div>
+      
+      
     <section>
 
         <nav>
@@ -20,9 +34,10 @@
             </div>
 
             <div class="sign">
-                <div class="signIn" onclick="goto('/pending')">Sign in</div>
-                <div class="signUp" onclick="goto('/pending')">Sign up</div>
+                <div class="signIn" onclick="document.getElementById('id01').style.display='flex'">Sign in</div>
+                <div class="signUp" onclick="document.getElementById('id02').style.display='flex'">Sign up</div>
             </div>
+            <span onclick="openNav()" class="B"><i class="fa fa-bars " style="font-size: 2rem;padding-right: 15px;"></i></span>
         </nav>
         
         <div class="welcome">
@@ -47,11 +62,185 @@
         </div>
     </section>
 
+
+    <!-- The Modal for login -->
+    <div id="id01" class="modal">
+
+    <!-- Login form Content -->
+    <form class="modal-content animate" action="/">
+        <div class="logo" style="display: flex;justify-content: center;margin: 10px 0px;font-size: 2rem;">
+            <h1>SIGN-IN</h1>
+        </div>
+        <div class="container">
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter your email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter your password" name="password" required>
+
+        <button type="submit">SIGN-IN</button>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1;border-radius: 10px;">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+    </div>
+
+    <!-- The Modal for login -->
+    <div id="id02" class="modal">
+
+    <!-- Login form Content -->
+    <form class="modal-content animate" action="/" id="signUp">
+        <div class="logo" style="display: flex;justify-content: center;margin: 10px 0px;font-size: 2rem;">
+            <h1>SIGN-UP</h1>
+        </div>
+        <div class="container">
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter your email" name="email" id="Semail" required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter your password" name="password" id="Sp1" required>
+
+        <label for="Cpassword"><b>Confirm Password</b></label>
+        <input type="password" placeholder="Confirm your password" name="Cpassword" id="Sp2" required>
+        <input type="checkbox" onclick="showP()">Show Passwords
+
+        <button type="submit" >SIGN-UP</button>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1;border-radius: 10px;">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Already have an account <a href="#" onclick="showlog()">SIGN-IN?</a></span>
+        </div>
+    </form>
+    </div>
+
+
+
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js'
     
+        // Add Firebase products that you want to use
+        import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js'
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC6LbV4AJAxbpBlMXtSBz77NgdgInpcl6c",
+            authDomain: "lsachatbot.firebaseapp.com",
+            projectId: "lsachatbot",
+            storageBucket: "lsachatbot.appspot.com",
+            messagingSenderId: "817674467330",
+            appId: "1:817674467330:web:a97a4b92bc7a8258308f1b"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        // Initialize Firebase Authentication and get a reference to the service
+        const auth = getAuth(app);
+
+        // create an account when a user clicks the sign up button...
+        document.getElementById('signUp').addEventListener('submit', (event) => {
+
+            event.preventDefault();
+            // get data from the form and check if passwords match before creating account.
+            let e = document.getElementById('Semail');
+            let psw = document.getElementById('Sp1');
+            let cpsw = document.getElementById('Sp2');
+            let email = e.value;
+            let password = psw.value;
+
+            if(psw.value === cpsw.value){
+
+                createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed up 
+                    const user = userCredential.user;
+                    console.log(userCredential)
+                    // create user session
+                    sessionStorage.setItem('user',user.email);
+                    sessionStorage.setItem('userID',user.uid);
+                    // clear input fields
+                    e.value,cpsw.value,psw.value = "";
+                    goto('/chat');
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert('Error siging in please check you internet connectivity and try again.');
+                    // ..
+                });
+
+            }else{
+                alert('Passwords donot match');
+            }
+
+        });
+
+
+        // SignIn existing users...
+        //signInWithEmailAndPassword(auth, email, password)
+        //.then((userCredential) => {
+            // Signed in 
+            //const user = userCredential.user;
+            // ...
+        //})
+        //.catch((error) => {
+           // const errorCode = error.code;
+           // const errorMessage = error.message;
+        //});
+    </script>
 </body>
+
 <script>
     function goto(site){
         window.location.assign(site);
     }
-</script>
+
+    // Get the modal
+    var modal = document.getElementById('id01');
+    var modal2 = document.getElementById('id02');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal || event.target == modal2) {
+        modal.style.display = "none";
+        modal2.style.display = "none";
+
+      }
+    }
+
+    function showlog(){
+        modal2.style.display = "none";
+        modal.style.display = "flex";
+    }
+    function showP() {
+        var x = document.getElementById("Sp1");
+        var y = document.getElementById("Sp2");
+        if (x.type === "password") {
+          x.type = "text";
+          y.type = "text";
+        } else {
+          x.type = "password";
+          y.type = "password";
+        }
+      }
+
+      /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
 </html>
