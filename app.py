@@ -1,7 +1,10 @@
-from flask import Flask, request, redirect, render_template,jsonify,url_for,session
+from flask import Flask, request, redirect, render_template,jsonify,url_for,session,flash
 from model import getResponds
 from time import *
+import json
 app = Flask(__name__)
+
+app.secret_key = 'ndoqwi3923jd'
 
 
 def login_required(func):
@@ -10,6 +13,7 @@ def login_required(func):
             return func(*args, **kwargs)
             
         data = {"message":"Please login or signup"}
+        
         return render_template("landingPage.html",**data)
     
     wrapper_func.__name__ = func.__name__  # Preserve the original function name
@@ -24,12 +28,20 @@ def index():
 
 @app.route("/startSession", methods=["POST"])
 def startSession():
-    email = request.form['email']
-    uid = request.form['uid']
+    raw_data = request.data
+    data = json.loads(raw_data)
+    email = data.get('email')
+    uid = data.get('uId')
     session['user'] = email
     session['userID'] = uid
     
-    return 202
+    return jsonify({"started": 'yes'}), 202
+
+@app.route("/endSession", methods=["POST","GET"])
+def endSession():
+    session.clear()
+    
+    return render_template("landingPage.html")
 
 
 @app.route("/getResponds", methods=["POST"])
@@ -44,12 +56,12 @@ def respond():
     return jsonify(message)
 
 @app.route("/chat")
+@login_required
 def chat():
     
     return render_template("chatpage.html")
 
 @app.route("/pending")
-@login_required
 def pendingUpdate():
     
     return render_template("pending.html")

@@ -6,14 +6,21 @@
     <title>LSA_LandingPage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/css/landing.css">
+    
 </head>
 <body>
+    {% if message %}
+            <script>
+                alert('Please login or signup');
+            </script>
+    {% endif %}
+
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Help</a>
-        <a href="#">Chat</a>
+        <a href="#" class="nI">Home</a>
+        <a href="#" class="nI">About</a>
+        <a href="#" class="nI">Help</a>
+        <a href="#" class="nI">Chat</a>
         <div class="sign" style="display: block;">
             <div class="signIn" onclick="document.getElementById('id01').style.display='flex';closeNav()">Sign in</div>
             <div class="signUp" onclick="document.getElementById('id02').style.display='flex';closeNav()">Sign up</div>
@@ -27,20 +34,24 @@
             <div class="logo">LSA_Chatbot</div>
 
             <div class="pages">
-                <div class="p" >Home</div>
-                <div class="p"  onclick="goto('/pending')">About</div>
-                <div class="p" onclick="goto('/pending')">Help</div>
-                <div class="p" onclick="goto('/chat')">Chat</div>
+                <div class="p active" onclick="showSect(0)">Home</div>
+                <div class="p" onclick="showSect(1)" >About</div>
+                <div class="p" onclick="showSect(2)">Help</div>
+                <div class="p" onclick="">Chat</div>
             </div>
 
             <div class="sign">
                 <div class="signIn" onclick="document.getElementById('id01').style.display='flex'">Sign in</div>
                 <div class="signUp" onclick="document.getElementById('id02').style.display='flex'">Sign up</div>
             </div>
-            <span onclick="openNav()" class="B"><i class="fa fa-bars " style="font-size: 2rem;padding-right: 15px;"></i></span>
+            <span onclick="openNav()" class="B"><i class="fa fa-bars " style="font-size: 2rem;
+                padding-right: 15px;"></i></span>
         </nav>
-        
-        <div class="welcome">
+        <div class="space" style="height: 100px; width:100%;">
+
+        </div>
+        <div class="welcome" id="landing">
+            
            <div class="welcomeText">
             <h1 class="I1">Hi there stranger!</h1>
             <h3 class="I2"> Welcome to Landmark's Student Assistant ChatBot,</h3>
@@ -53,12 +64,44 @@
             </button>
            </div>
            <div class="welImg">
-                <img src="../static/img/girl.png" alt="">
+                <img src="../static/img/sandrine.png" alt="">
                 <div class="message1">Hi there!</div>
                 <div class="message2"> Hello, what can i study in Landmark</div>
-                <div class="message1" style="top: 45%;">There are a varity of courses we offer, what are you into</div>
-                <div class="message2" style="top: 55%;max-width: 180px;"> I love animation and I'm good at computer</div>
+                <div class="message1" style="top: 50%;">There are a varity of courses we offer, what are you into</div>
+                <div class="message2" style="top: 64%;max-width: 180px; z-index:1;"> I love animation and I'm good at computer</div>
            </div>
+        </div>
+
+        
+        <div class="about" id="about" style="position: relative;">
+           
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <div class="half">
+                <div class="aboutUs">
+                    Zylla is a chatbot designed to answer questions about the institude of Landmark Buea.
+                    She is trained on data gotten from the LMUI website and makes use of current AI technologies 
+                    to assist students or personels with research and more.
+                </div>
+                <div class="aniI" >
+                    <lottie-player src="https://lottie.host/d9530aa3-dd21-481d-8148-f9a878f6b3ab/Wj4Wt9iY80.json" background="transparent" speed="1" style="width: 100%; height: 100%" loop autoplay direction="1" mode="normal"></lottie-player>
+                </div>
+            </div>
+            <div class="half">
+                <div class="aniI" style="margin-left: 10%;">
+                    <lottie-player src="https://lottie.host/abd3f40a-836c-4023-a268-da4097fa44de/cYOwxii3ma.json" background="transparent" speed="1" style="width: 100%; height: 100%" loop autoplay direction="1" mode="normal"></lottie-player>
+                </div>
+                <div class="aboutUs">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Accusamus voluptas doloribus cupiditate ipsum aperiam 
+                    alias quo odit ipsam, possimus magni.
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="help" id="help">
+            
         </div>
     </section>
 
@@ -67,16 +110,17 @@
     <div id="id01" class="modal">
 
     <!-- Login form Content -->
-    <form class="modal-content animate" action="/">
+    <form class="modal-content animate" action="/" id="signIn">
         <div class="logo" style="display: flex;justify-content: center;margin: 10px 0px;font-size: 2rem;">
             <h1>SIGN-IN</h1>
         </div>
         <div class="container">
         <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="Enter your email" name="email" required>
+        <input type="email" placeholder="Enter your email" name="email" id="Lemail" required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter your password" name="password" required>
+        <input type="password" placeholder="Enter your password" name="password" id="Lpas" required>
+        <input type="checkbox" onclick="showP2()">Show Passwords
 
         <button type="submit">SIGN-IN</button>
             <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -84,7 +128,7 @@
 
         <div class="container" style="background-color:#f1f1f1;border-radius: 10px;">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
+        <span class="psw">Forgot <a href="" onclick="resetPassword(event)">password?</a></span>
         </div>
     </form>
     </div>
@@ -120,13 +164,15 @@
     </div>
 
 
+        
+    
 
 
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js'
     
         // Add Firebase products that you want to use
-        import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
+        import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
         import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js'
     
         // Your web app's Firebase configuration
@@ -137,7 +183,7 @@
             storageBucket: "lsachatbot.appspot.com",
             messagingSenderId: "817674467330",
             appId: "1:817674467330:web:a97a4b92bc7a8258308f1b"
-        };
+          };
     
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
@@ -163,9 +209,11 @@
                     // Signed up 
                     const user = userCredential.user;
                     console.log(userCredential)
-                    // create user session
+                    // create user session frontend
                     sessionStorage.setItem('user',user.email);
                     sessionStorage.setItem('userID',user.uid);
+                    // create user session in backend
+                    sendUserData(user.uid, user.email);
                     // clear input fields
                     e.value,cpsw.value,psw.value = "";
                     goto('/chat');
@@ -174,7 +222,7 @@
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    alert('Error siging in please check you internet connectivity and try again.');
+                    alert('Error siging in please check you internet connectivity and try again', errorMessage);
                     // ..
                 });
 
@@ -182,20 +230,128 @@
                 alert('Passwords donot match');
             }
 
+            async function sendUserData(userId, userEmail) {
+                const url = "/startSession"; // Replace with your actual backend URL and endpoint
+              
+                const data = {
+                  uId: userId,
+                  email: userEmail,
+                };
+              
+                const options = {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',  // Set content type to JSON
+                  },
+                  body: JSON.stringify(data),  // Stringify data object for sending
+                };
+              
+                try {
+                  const response = await fetch(url, options);
+                  if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}` );
+                  }
+              
+                  const responseData = await response.json();
+                  console.log("Response from backend:", responseData);  // Handle response data
+                } catch (error) {
+                  console.error("Error sending data:", error);
+                }
+            }
+
         });
 
 
-        // SignIn existing users...
-        //signInWithEmailAndPassword(auth, email, password)
-        //.then((userCredential) => {
-            // Signed in 
-            //const user = userCredential.user;
-            // ...
-        //})
-        //.catch((error) => {
-           // const errorCode = error.code;
-           // const errorMessage = error.message;
-        //});
+        document.getElementById('signIn').addEventListener('submit', (event) => {
+
+            event.preventDefault();
+            // get data from the form then sign the user in.
+            let e = document.getElementById('Lemail');
+            let psw = document.getElementById('Lpas');
+            let email = e.value;
+            let password = psw.value;
+
+
+            // SignIn existing users...
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed up 
+                const user = userCredential.user;
+                console.log(userCredential)
+                // create user session in js and python..
+                sessionStorage.setItem('user',user.email);
+                sessionStorage.setItem('userID',user.uid);
+                sendUserData(user.uid, user.email);
+                // clear input fields
+                e.value,psw.value = "";
+                goto("/chat");
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(`Error signing in ${error}`);
+            });
+               
+
+            
+
+            async function sendUserData(userId, userEmail) {
+                const url = "/startSession"; // Replace with your actual backend URL and endpoint
+              
+                const data = {
+                  uId: userId,
+                  email: userEmail,
+                };
+              
+                const options = {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',  // Set content type to JSON
+                  },
+                  body: JSON.stringify(data),  // Stringify data object for sending
+                };
+              
+                try {
+                  const response = await fetch(url, options);
+                  if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}` );
+                  }
+              
+                  const responseData = await response.json();
+                  console.log("Response from backend:", responseData);  // Handle response data
+                } catch (error) {
+                  console.error("Error sending data:", error);
+                }
+            }
+
+        });
+
+        function resetPassword(event) {
+            event.preventDefault();
+            const email = document.getElementById('Lemail').value;
+
+            if (email){
+                sendPasswordResetEmail(auth,email)
+                .then(() => {
+                    // Password reset email sent successfully
+                    alert('Password reset email sent. Check your inbox.');
+                })
+                .catch((error) => {
+                    // Handle errors
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(`Error (${errorCode}): ${errorMessage}`);
+                    alert(`Failed to send password reset email: ${errorMessage}`);
+                });
+            }else{
+                alert(`Please enter your email to send reset link!`);
+                }
+            }
+
+        // Make the function globally accessible
+        window.resetPassword = resetPassword;
+       
     </script>
 </body>
 
@@ -233,6 +389,15 @@
         }
       }
 
+      function showP2() {
+        var y = document.getElementById("Lpas");
+        if (y.type === "password") {
+          y.type = "text";
+        } else {
+          y.type = "password";
+        }
+      }
+
       /* Set the width of the side navigation to 250px */
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
@@ -241,6 +406,39 @@
     /* Set the width of the side navigation to 0 */
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+    }
+
+    let sect1 = document.getElementById('landing');
+    let sect2 = document.getElementById('about');
+    let sect3 = document.getElementById('help');
+
+    const sections = [sect1,sect2,sect3];
+
+    function showSect(num){
+        //console.log(num)
+        //sections[num].style.display = "flex";
+        //console.log(sections.length);
+        for(i=0;i<sections.length;i++){
+            if(i == num){
+                sections[i].style.display = "flex";
+            }else if(i != num){
+                sections[i].style.display = "none";
+            }
+        }
+    }
+    showSect(0);
+
+
+    // Get all nav buttons with class="p" inside the container
+    var btns = document.getElementsByClassName("p");
+
+    // Loop through the buttons and add the active class to the current/clicked button
+    for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
     }
     </script>
 </html>

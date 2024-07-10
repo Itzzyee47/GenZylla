@@ -38,7 +38,7 @@ generation_config = {
     "temperature": 0.25,
     "top_p": 0.95,
     "top_k": 64,
-    "max_output_tokens": 8192,
+    "max_output_tokens": 3192,
     "response_mime_type": "text/plain",
 }
 
@@ -80,7 +80,7 @@ chat_session = model.start_chat(history= [
 {
 "role": "model",
 "parts": [
-"Landmark College is a pretty amazing place! 🎉It's a small, private college in Vermont that focuses on helping students with learning differences succeed.They offer a unique and supportive environment where students can learn in ways that work best for them.\n\nWant to know more about Landmark?I can tell you about their programs, student life, or anything else that interests you! Just ask! 😊 \n",
+"Landmark College is a pretty amazing place! 🎉It's a private university found around the world that focuses on helping creating productive leader.They offer a unique and supportive environment where students can learn in ways that work best for them.\n\nWant to know more about Landmark?I can tell you about their programs, student life, or anything else that interests you! Just ask! 😊 \n",
 ],
 },
 {
@@ -92,7 +92,7 @@ chat_session = model.start_chat(history= [
 {
 "role": "model",
 "parts": [
-"Landmark College is a special place! 🎉It's a small, private college in Vermont that focuses on helping students with learning differences succeed. They offer a unique and supportive environment where students can learn in ways that work best for them.\n\nWant to know more about Landmark? I can tell you about their programs, student life, or anything else that interests you! Just ask! 😊 \n",
+"Landmark College is a private university that focuses on traing productive leaders! 🎉It's found in Buea with two campus, campus A at UB juction opposite UNICs bank and campus B at tard Maligo towards mile 18.😊 \n",
 ],
 },
 {
@@ -116,7 +116,7 @@ chat_session = model.start_chat(history= [
 {
 "role": "model",
 "parts": [
-"You got it! Campus B at LMU Buea is a bit further out than the main campus. 's how to get there:\n\n* **Start at the main LMU campus:** You'll find the main entrance on the main road in Buea.\n* **Head towards the Molyko neighborhood:** From the main campus, take the road that leads towards Molyko.\n* **Look for the sign:** You'll see a sign for Campus B on your right-hand side.\n* **Follow the road:** The road will lead you directly to Campus B.\n\nIf you're having trouble finding it, you can always ask a local for directions. They'll be happy to help! 😊 \n\nIs there anything else I can help you with? I'm here to make your LMU experience easier! \n",
+"You got it! Take a taxi to tard Maligo, from there head towards mile 18, The campus building is at the side of the road you can miss it.😊\n",
 ],
 },
 {
@@ -140,7 +140,7 @@ chat_session = model.start_chat(history= [
 {
 "role": "model",
 "parts": [
-"LMU Buea offers a variety of programs across different fields of study. Here are some of the main ones:\n\n**Faculty of Arts and Humanities:**\n\n* English Language and Literature\n* French Language and Literature\n* History\n* Philosophy\n* Sociology\n* Communication Arts\n* Theatre Arts\n\n**Faculty of Social Sciences:**\n\n* Economics\n* Political Science\n* Public Administration\n* International Relations\n* Development Studies\n\n**Faculty of Law:**\n\n* Law\n\n**Faculty of Science:**\n\n* Biology\n* Chemistry\n* Physics\n* Mathematics\n* Computer Science\n\n**Faculty of Education:**\n\n* Primary Education\n* Secondary Education\n\n**Faculty of Management:**\n\n* Business Administration\n* Marketing\n* Finance\n* Accounting\n\n**Faculty of Engineering:**\n\n* Civil Engineering\n* Mechanical Engineering\n* Electrical Engineering\n\n**Faculty of Health Sciences:**\n\n* Nursing\n* Public Health\n\nThis is just a brief overview. You can find more detailed information about each program on the LMU Buea website (landmark.cm).\n\nDo you have any specific programs in mind? I can help you find more information about them! 😊 \n",
+"LMU Buea offers a variety of programs across different fields of study. Here are some of the main ones:\n\n**Faculty of Engineering:**\n\n* English Language and Literature\n* French Language and Literature\n* History\n* Philosophy\n* Sociology\n* Communication Arts\n* Theatre Arts\n\n**Faculty of Social Sciences:**\n\n* Economics\n* Political Science\n* Public Administration\n* International Relations\n* Development Studies\n\n**Faculty of Law:**\n\n* Law\n\n**Faculty of Science:**\n\n* Biology\n* Chemistry\n* Physics\n* Mathematics\n* Computer Science\n\n**Faculty of Education:**\n\n* Primary Education\n* Secondary Education\n\n**Faculty of Management:**\n\n* Business Administration\n* Marketing\n* Finance\n* Accounting\n\n**Faculty of Engineering:**\n\n* Civil Engineering\n* Mechanical Engineering\n* Electrical Engineering\n\n**Faculty of Health Sciences:**\n\n* Nursing\n* Public Health\n\nThis is just a brief overview. You can find more detailed information about each program on the LMU Buea website (landmark.cm).\n\nDo you have any specific programs in mind? I can help you find more information about them! 😊 \n",
 ],
 },
 {
