@@ -446,7 +446,8 @@ async function getConvos(){
     
 
 }
-
+let newConvoBtn = document.getElementById('cNconvo');
+newConvoBtn.addEventListener('click', () => {createNewCOnversation();});
 
 getConvos();
 console.log('DOne')

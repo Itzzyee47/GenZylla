@@ -61,6 +61,11 @@ def chat():
     
     return render_template("chatpage.html")
 
+@app.route("/tChat")
+def tChat():
+    
+    return render_template("testChatpage.html")
+
 @app.route("/pending")
 def pendingUpdate():
     
