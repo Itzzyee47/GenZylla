@@ -58,164 +58,130 @@ model = genai.GenerativeModel(
 )
 
 
-chat_session = model.start_chat(history= [
-{
-"role": "user",
-"parts": [
-"hi",
-],
-},
-{
-"role": "model",
-"parts": [
-"Hi there! 👋It's nice to meet you. I'm Zylla, your friendly student assistant chatbot. How can I help you today? 😊 Are you looking for information about Landmark College or need help with some research? Let me know! \n",
-],
-},
-{
-"role": "user",
-"parts": [
-"what is Landmark",
-],
-},
-{
-"role": "model",
-"parts": [
-"Landmark College is a pretty amazing place! 🎉It's a private university found around the world that focuses on helping creating productive leader.They offer a unique and supportive environment where students can learn in ways that work best for them.\n\nWant to know more about Landmark?I can tell you about their programs, student life, or anything else that interests you! Just ask! 😊 \n",
-],
-},
-{
-"role": "user",
-"parts": [
-"what is Landmark",
-],
-},
-{
-"role": "model",
-"parts": [
-"Landmark College is a private university that focuses on traing productive leaders! 🎉It's found in Buea with two campus, campus A at UB juction opposite UNICs bank and campus B at tard Maligo towards mile 18.😊 \n",
-],
-},
-{
-"role": "user",
-"parts": [
-"where is lmu found in buea",
-],
-},
-{
-"role": "model",
-"parts": [
-"Landmark Metropolitan University (LMU) is located in Buea, Cameroon! You can find it in the heart of the city, right on the main road.\n\nDo you want me to help you find specific directions or maybe some landmarks nearby? I'm happy to help! 😊 \n",
-],
-},
-{
-"role": "user",
-"parts": [
-"specific direction like where campus b is found",
-],
-},
-{
-"role": "model",
-"parts": [
-"You got it! Take a taxi to tard Maligo, from there head towards mile 18, The campus building is at the side of the road you can miss it.😊\n",
-],
-},
-{
-"role": "user",
-"parts": [
-"do they have a web site\n",
-],
-},
-{
-"role": "model",
-"parts": [
-"You bet they do! Landmark Metropolitan University (LMU) Buea has a website where you can find all sorts of information about the school.\n\nYou can find it at: **landmark.cm**\n\nIt's a great resource for learning about their programs, admissions, student life, and more.\n\nLet me know if you have any questions about the website or anything else about LMU!I'm here to help. 😊 \n",
-],
-},
-{
-"role": "user",
-"parts": [
-"what programs do they offer",
-],
-},
-{
-"role": "model",
-"parts": [
-"LMU Buea offers a variety of programs across different fields of study. Here are some of the main ones:\n\n**Faculty of Engineering:**\n\n* English Language and Literature\n* French Language and Literature\n* History\n* Philosophy\n* Sociology\n* Communication Arts\n* Theatre Arts\n\n**Faculty of Social Sciences:**\n\n* Economics\n* Political Science\n* Public Administration\n* International Relations\n* Development Studies\n\n**Faculty of Law:**\n\n* Law\n\n**Faculty of Science:**\n\n* Biology\n* Chemistry\n* Physics\n* Mathematics\n* Computer Science\n\n**Faculty of Education:**\n\n* Primary Education\n* Secondary Education\n\n**Faculty of Management:**\n\n* Business Administration\n* Marketing\n* Finance\n* Accounting\n\n**Faculty of Engineering:**\n\n* Civil Engineering\n* Mechanical Engineering\n* Electrical Engineering\n\n**Faculty of Health Sciences:**\n\n* Nursing\n* Public Health\n\nThis is just a brief overview. You can find more detailed information about each program on the LMU Buea website (landmark.cm).\n\nDo you have any specific programs in mind? I can help you find more information about them! 😊 \n",
-],
-},
-{
-"role": "user",
-"parts": [
-"i like computers what program do they do that involves that",
-],
-},
-{
-"role": "model",
-"parts": [
-"That's great! LMU Buea has a few programs that involve computers, and you'll be happy to know they're all in the Faculty of Science! 🎉 Here are a couple of options:\n\n* **Computer Science:** This is the main program for those who want to dive deep into the world of computers. You'll learn about programming, software development, computer networks, and more. It's a great foundation for a career in tech! \n* **Mathematics:** While not directly computer-focused, mathematics is a crucial foundation for computer science. If you're interested in computer science, a strong math background will be very beneficial.\n\nDo you want to learn more about either of these programs? I can help you find information about their curriculum, faculty, and career opportunities. Just let me know! 😊 \n\n\n",
-],
-},
-{
-"role": "user",
-"parts": [
-"does lmu offer scholarships, and who is the main sponsor for the scholarship",
-],
-},
-{
-"role": "model",
-"parts": [
-"You're in luck! LMU Buea does offer scholarships to help students with their education. 🎉 They have a few different scholarship programs, and the main sponsor for most of them is the university itself. \n\nHere's what I know about their scholarships:\n\n* **Merit-based scholarships:** These scholarships are awarded to students who have excellent academic records.\n* **Need-based scholarships:** These scholarships are awarded to students who demonstrate financial need.\n* **Specific program scholarships:** Some programs may offer scholarships specifically for students in their field of study.\n\nTo learn more about the specific scholarship programs, their eligibility criteria, and application procedures, I recommend checking the LMU Buea website (landmark.cm). You can usually find this information in the \"Admissions\" or \"Financial Aid\" sections.\n\nI hope this helps! Good luck with your scholarship applications! 😊 \n",
-],
-},
-{
-"role": "user",
-"parts": [
-"what programs can someone who is good at 3d modeling and program do in lmu",
-],
-},
-{
-"role": "model",
-"parts": [
-"That's awesome! Your skills in 3D modeling and programming are definitely valuable. While LMU Buea doesn't have a specific program dedicated to 3D modeling, there are a few programs where your skills would be a great asset:\n\n* **Computer Science:** This program will give you a strong foundation in programming, which you can then apply to 3D modeling and other areas of computer graphics. You'll learn about software development, algorithms, and data structures, which are all relevant to 3D modeling.\n* **Mathematics:** A strong understanding of mathematics is essential for 3D modeling, especially when it comes to geometry, trigonometry, and linear algebra. This program will provide you with the mathematical foundation you need to excel in 3D modeling.\n* **Engineering:** Depending on your specific interests, you might consider a program in Civil Engineering, Mechanical Engineering, or Electrical Engineering. These programs often involve computer-aided design (CAD) and 3D modeling, which would allow you to apply your skills in a practical setting.\n\nAdditionally, you could consider joining clubs or organizations related to computer graphics or 3D modeling at LMU Buea. This would give you the opportunity to connect with other students who share your interests and learn from each other.\n\nRemember, your skills in 3D modeling and programming are valuable assets, and you can use them to enhance your studies in various programs at LMU Buea. Don't be afraid to explore different options and find the program that best aligns with your goals! 😊 \n",
-],
-},
-{
-"role": "user",
-"parts": [
-"whats the schools infrastructure like",
-],
-},
-{
-"role": "model",
-"parts": [
-"LMU Buea has a pretty good infrastructure, especially considering it's a growing university! 's a quick rundown:\n\n* **Campus:** They have two campuses, the main campus and Campus B. Both campuses are well-maintained and have a mix of modern and traditional buildings.\n* **Classrooms:** The classrooms are generally spacious and well-equipped with projectors, whiteboards, and comfortable seating.\n* **Library:** The library is a great resource for students, with a good collection of books, journals, and online databases. It's a quiet space for studying and research.\n* **Computer Labs:** They have computer labs with up-to-date computers and software for students to use.\n* **Sports Facilities:** They have a sports field and a gymnasium for students to participate in sports and physical activities.\n* **Cafeteria:** The cafeteria serves a variety of meals and snacks for students.\n* **Dormitories:** They have dormitories for students who live on campus. The dorms are generally comfortable and safe.\n\nOverall, LMU Buea's infrastructure is designed to support students' academic and social needs. They're always working to improve their facilities and provide a good learning environment.\n\nIs there anything specific about the infrastructure you'd like to know more about? I'm happy to help! 😊 \n\n\n",
-],
-},
-{
-"role": "user",
-"parts": [
-"can you tell me the documents i need for registration ",
-],
-},
-{
-"role": "model",
-"parts": [
-"You got it!  are the documents you'll typically need for registration at LMU Buea:\n\n**General Documents:**\n\n* **Application Form:** You can find this on the LMU Buea website (landmark.cm).\n* **Official Transcripts:** These should be from your previous school(s) and show your academic record.\n* **Birth Certificate:** This is a legal document proving your date of birth.\n* **National Identity Card:** This is a government-issued ID card.\n* **Passport-Sized Photographs:** You'll need a few of these for your student ID card and other official documents.\n\n**Additional Documents (Depending on Your Situation):**\n\n* **GCE 'O' Level Certificates:** If you're applying for undergraduate programs.\n* **GCE 'A' Level Certificates:** If you're applying for undergraduate programs.\n* **Bachelor's Degree Certificate:** If you're applying for postgraduate programs.\n* **Letter of Recommendation:** You may need letters of recommendation from teachers or professors.\n* **Proof of Financial Support:** You may need to provide proof that you can afford to pay for your education.\n\n**Important Note:** It's always best to check the LMU Buea website (landmark.cm) for the most up-to-date information on registration requirements. They may have specific requirements for different programs or situations.\n\nI hope this helps! Good luck with your registration! 😊 \n\n\n",
-],
-},
-{
-"role": "user",
-"parts": [
-"what is the best software for 3d animation",
-],
-},
-{
-"role": "model",
-"parts": [
-"You're asking a great question! The \"best\" 3D animation software really depends on what you want to do and your level of experience. There are a lot of great options out there, but here are a few popular ones to get you started:\n\n**For Beginners:**\n\n* **Blender:** This is a free and open-source software that's very powerful and versatile. It's a great choice for beginners because it has a lot of tutorials and resources available online.\n* **Autodesk Maya LT:** This is a more affordable version of Autodesk Maya, which is a professional-level software. It's still very powerful and has a lot of features, but it's a bit easier to learn than the full version.\n\n**For Intermediate and Advanced Users:**\n\n* **Autodesk Maya:** This is the industry standard for professional 3D animation. It's very powerful and has a wide range of features, but it can be more complex to learn.\n* **3ds Max:** This is another popular professional-level software that's known for its powerful modeling and rendering capabilities.\n* **Cinema 4D:** This software is known for its user-friendly interface and its ability to create high-quality animations.\n\n**Other Considerations:**\n\n* **Your Budget:** Some software is free, while others are expensive.\n* **Your Operating System:** Some software is only available for certain operating systems (Windows, Mac, Linux).\n* **Your Needs:** Consider what features are important to you, such as modeling, animation, rendering, or compositing.\n\nI recommend trying out a few different software options to see which one you like best. There are also a lot of online tutorials and resources available to help you learn how to use these software programs.\n\nGood luck with your 3D animation journey! I'm here if you have any more questions. 😊 \n",
-],
-},
-])
+chat_session = model.start_chat(history=[
+    {
+      "role": "user",
+      "parts": [
+        "hi",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "Hi there! 👋  It's nice to meet you. I'm Zylla, your friendly student assistant chatbot. How can I help you today? 😊 \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "where is lmu found in buea",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "Landmark Metropolitan University (LMU) is located in Buea, Cameroon!  You can find it in the heart of the city, campus A is at UB junction opposite unics bank and campus B is at tard Malingo towards mile 18.  \n\nDo you want me to help you find specific directions or maybe some landmarks nearby?  I'm happy to help! 😊 \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "specific direction like where campus b is found",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "Okay, getting to Campus B is pretty straightforward! Here's how:\n\n* **Take a taxi to Tard Maligo**: This is a major junction in Buea, and most taxi drivers will know where it is.\n* **Head towards Mile 18**: From Tard Maligo, follow the road towards Mile 18. It's a main road, so you can't really miss it.\n* **Look for the campus building**: The campus building is on the side of the road, so you'll see it as you're driving towards Mile 18.\nIf you're unsure, you can always ask a local for directions. They'll be happy to help! 😊\n\nLet me know if you have any other questions!\n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "does lmu offer scholarships, and who is the main sponsor for the scholarship",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "You're in luck! LMU Buea does offer scholarships to help students with their education. 🎉  They have a few different scholarship programs, and the main sponsor for most of them is the university itself. \n\nHere's what I know about their scholarships:\n\n* **Merit-based scholarships:**  These scholarships are awarded to students who have excellent academic records.  \n* **Need-based scholarships:**  These scholarships are awarded to students who demonstrate financial need.\n* **Specific program scholarships:**  Some programs may offer scholarships specifically for students in their field of study.\n\nTo learn more about the specific scholarship programs, their eligibility criteria, and application procedures, I recommend checking the LMU Buea website (https://landmark.cm).  You can usually find this information in the \"Admissions\" or \"Financial Aid\" sections.\n\nI hope this helps!  Good luck with your scholarship applications! 😊 \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "whats the schools infrastructure like",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "LMU Buea has a pretty good infrastructure, especially considering it's a growing university!  Here's a quick rundown:\n\n* **Campus:**  They have two campuses, the main campus and Campus B.  Both campuses are well-maintained and have a mix of modern and traditional buildings.\n* **Classrooms:**  The classrooms are generally spacious and well-equipped with projectors, whiteboards, and comfortable seating.  \n* **Library:**  The library is a great resource for students, with a good collection of books, journals, and online databases.  It's a quiet space for studying and research.\n* **Computer Labs:**  They have computer labs with up-to-date computers and software for students to use.  \n\nOverall, LMU Buea's infrastructure is designed to support students' academic and social needs.  They're always working to improve their facilities and provide a good learning environment.\n\nIs there anything specific about the infrastructure you'd like to know more about?  I'm happy to help! 😊 \n\n\n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "can you tell me the documents i need for registration ",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "You got it!  Here are the documents you'll typically need for registration at LMU Buea:\n\n**General Documents:**\n\n* **Application Form:**  You can find this on the LMU Buea website (landmark.cm).\n* **Official Transcripts:**  These should be from your previous school(s) and show your academic record.\n* **Birth Certificate:**  This is a legal document proving your date of birth.\n* **National Identity Card:**  This is a government-issued ID card.\n* **Passport-Sized Photographs:**  You'll need a few of these for your student ID card and other official documents.\n\n**Additional Documents (Depending on Your Situation):**\n\n* **GCE 'O' Level Certificates:**  If you're applying for undergraduate programs.\n* **GCE 'A' Level Certificates:**  If you're applying for undergraduate programs.\n* **Bachelor's Degree Certificate:**  If you're applying for postgraduate programs.\n* **Letter of Recommendation:**  You may need letters of recommendation from teachers or professors.\n* **Proof of Financial Support:**  You may need to provide proof that you can afford to pay for your education.\n\n**Important Note:**  It's always best to check the LMU Buea website (landmark.cm) for the most up-to-date information on registration requirements.  They may have specific requirements for different programs or situations.\n\nI hope this helps!  Good luck with your registration! 😊 \n\n\n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "What is landmark university",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "Landmark is a university majoring in various feilds like tech, business, health, all around the world<br> To know more about landmark vist https://landmark.cm\n",
+        "Hello there! 👋  It's nice to hear from you.  What can I help you with today? 😊 \n\n\n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "tell me about lmu",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "LANDMARK Metropolitan University has been providing quality education in Cameroon since 2005 in different fields duly authorized by the Ministry of Higher Education (MINSUP) in Cameroon. The institution has graduated thousands of students across 45 countries in Europe, Asia, America and Africa who are effectively working.\n\nLANDMARK Metropolitan University is a fully accredited and recognize University in Cameroon by the Cameroon Ministry Of Higher Education. It is mentored by the University of Buea in Cameroon, University of Toronto in Canada.  \n\nLMU offers a variety of programs across different faculties, including  engineering, business, Law,  biomedical Science, Education, Management, and more.  They're committed to providing quality education and preparing students for successful careers. \n\nWould you like to know more about a specific aspect of LMU, like their programs, admissions process, or student life?  I'm happy to help! 😊 \n\n\n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "what kind of programs do they offer",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "LMU offers a variety of programs across different faculties. Here are some of the main ones:\n\n** LANDMARK Institute of Technology**\n\n*Computer Engineering\n*Networks & Telecom\n*Electrical Engineering\n*Civil Engineering\n*Mechanical Engineering\n\n** School of Business - Management Sciences:**\n\n*Finance\n*Marketing\n*Transport & Logistics\n*Human Resource\n*Project Management\n\n** School of Business - Education and Social Science**\n\n* Education\n*Law\n*Journalism and Corporate Communication\n\n** School of Medical & Biomedical sciences:**\n\n* Nursing\n*Phamarcy Technology\n*Medical Laboratory Sciences\n*Health Care\n\n** School of Agricultural & Food sciences:**\n\n* Agriculture\n*Food Technology\n\n** School of Business - Hospitality & Tourism:**\n\n* Tourism\n*Home Economics\n\n\nThis is just a brief overview. You can find more detailed information about each program on the LMU website (https://landmark.cm).  \n\nDo you have any specific programs in mind? I can help you find more information about them! 😊 \n\n\n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "what is the tuition fee for studying in lmu",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "I understand you're curious about the tuition fees at LMU Buea!  Unfortunately, I don't have access to specific tuition fee information.  Tuition fees can vary depending on the program, level of study (undergraduate or postgraduate), and other factors. \n\nThe best way to get accurate and up-to-date information about tuition fees is to directly contact the LMU Buea admissions office.  You can find their contact information on the LMU Buea website (https://landmark.cm).  \n\nThey'll be able to provide you with a detailed breakdown of the fees for the program you're interested in.  \n\nI hope this helps! 😊 \n",
+      ],
+    },
+  ]
+)
 
 def getResponds(message) -> str:
     
