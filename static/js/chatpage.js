@@ -9,6 +9,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.1/fireba
 import { getAuth,createUserWithEmailAndPassword,signOut,onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
 import { getFirestore,collection, addDoc, where,getDocs, query, orderBy,doc  } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js'
 
+import {hljs} from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/highlight.min.js';
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyC6LbV4AJAxbpBlMXtSBz77NgdgInpcl6c",
@@ -139,7 +140,7 @@ function applyTypewriterEffect(markdownContent, element) {
       
   }
 
-
+  hljs.highlightAll();
 
 marked.setOptions({
   mangle: false,

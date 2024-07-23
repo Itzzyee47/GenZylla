@@ -165,7 +165,7 @@ chat_session = model.start_chat(history=[
     {
       "role": "model",
       "parts": [
-        "LMU offers a variety of programs across different faculties. Here are some of the main ones:\n\n** LANDMARK Institute of Technology**\n\n*Computer Engineering\n*Networks & Telecom\n*Electrical Engineering\n*Civil Engineering\n*Mechanical Engineering\n\n** School of Business - Management Sciences:**\n\n*Finance\n*Marketing\n*Transport & Logistics\n*Human Resource\n*Project Management\n\n** School of Business - Education and Social Science**\n\n* Education\n*Law\n*Journalism and Corporate Communication\n\n** School of Medical & Biomedical sciences:**\n\n* Nursing\n*Phamarcy Technology\n*Medical Laboratory Sciences\n*Health Care\n\n** School of Agricultural & Food sciences:**\n\n* Agriculture\n*Food Technology\n\n** School of Business - Hospitality & Tourism:**\n\n* Tourism\n*Home Economics\n\n\nThis is just a brief overview. You can find more detailed information about each program on the LMU website (https://landmark.cm).  \n\nDo you have any specific programs in mind? I can help you find more information about them! 😊 \n\n\n",
+        "LMU offers a variety of programs across different faculties. Here are some of the main ones:\n\n** LANDMARK Institute of Technology**\n\n*Computer Engineering\n*Networks and Telecom\n*Electrical Engineering\n*Civil Engineering\n*Mechanical Engineering\n\n** School of Business - Management Sciences:**\n\n*Finance\n*Marketing\n*Transport and Logistics\n*Human Resource\n*Project Management\n\n** School of Business - Education and Social Science**\n\n* Education\n*Law\n*Journalism and Corporate Communication\n\n** School of Medical and Biomedical sciences:**\n\n* Nursing\n*Phamarcy Technology\n*Medical Laboratory Sciences\n*Health Care\n\n** School of Agricultural and Food sciences:**\n\n* Agriculture\n*Food Technology\n\n** School of Business - Hospitality and Tourism:**\n\n* Tourism\n*Home Economics\n\n\nThis is just a brief overview. You can find more detailed information about each program on the LMU website (https://landmark.cm).  \n\nDo you have any specific programs in mind? I can help you find more information about them! 😊 \n\n\n",
       ],
     },
     {
@@ -189,6 +189,6 @@ def getResponds(message) -> str:
    
     # Get the response from the model
     response = chat_session.send_message(user_input).text
-    print(response)
+    #print(response)
     
     return response
