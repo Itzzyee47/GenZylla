@@ -6,8 +6,9 @@
     <title>Chat with Zylla</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/css/chatpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/monokai-sublime.min.css">
 </head>
-<body id="bd" style="padding: 0;">
+<body id="bd" style="padding: ;">
     <div id="currentUser" style="display: none;"></div>
     <div class="h1">
         <div class="nConvo" style="position:absolute;color:black;left:2px;border:none;" onclick="openNav()">&#9776;</div>
@@ -71,16 +72,10 @@
         <div class="c1" style="width:95%; height:98vh; display: flex; flex-direction: column; justify-content: space-between;">
 
             <div class="c2" style="background-color: #0707076e; border-radius: 6px;">
-               <ul>
+               <ul id="allConvosMobile" style="list-style: none;">
                 <div style="margin-bottom: 12px; font-size:1rem;">Recent</div>
-                    <li>
-                        Pass conversation.
-                    </li>
-                    <li>
-                        Pass conversation.
-                    </li>
-                    <li>
-                        Pass conversation.
+                    <li  class="hiddenTxt convo">
+                        <i class="fa fa-comment"></i> Pass conversation.
                     </li>
                </ul>
             </div>
@@ -160,9 +155,11 @@
             logo.style.zIndex = '';
             logo.style.webkitTextStroke = '';
           }
+
     </script>
 
     <script src="../static/js/chatpage.js" type="module"></script>
+
    
 </body>
 </html>

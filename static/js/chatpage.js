@@ -9,7 +9,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.1/fireba
 import { getAuth,createUserWithEmailAndPassword,signOut,onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
 import { getFirestore,collection, addDoc, where,getDocs, query, orderBy,doc  } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js'
 
-import {hljs} from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/highlight.min.js';
+//import {hljs} from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/highlight.min.js';
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyC6LbV4AJAxbpBlMXtSBz77NgdgInpcl6c",
@@ -307,6 +307,7 @@ document.getElementById('message-form').addEventListener('submit', (event) => {
 
 
 let chats = document.getElementById('allConvos');
+let chatsMobile = document.getElementById('allConvosMobile');
 
 // Test case to get all conversations from the database belonging to the current user.
 
@@ -357,6 +358,7 @@ async function loadMessages(id) {
       const time = dox.time;
       createMessageBubble(sender, message);
     });
+    hljs.highlightAll()
   }
   if (chatHistory.children.length >= 1) {
     document.getElementById('p1').style.display = "none";
@@ -444,11 +446,52 @@ async function getConvos(){
       console.error("Error reading document: ", error);
   }
     
-    
-
 }
+
+async function getConvosMview(){  
+  try {
+    
+    const querySnapshot = await getDocs(query(collection(db, "conversations"),where("user", "==", currentUser)));
+    
+    if (!querySnapshot.empty) {
+      //load all conversations in recent convo list...
+      try {
+        querySnapshot.forEach((doc) => {
+          // Display each document's data
+          const data = doc.data();
+          const id = doc.id;
+          let passChat = document.createElement("li"); 
+          passChat.classList.add("convo");
+          passChat.addEventListener('click', ()=>{loadConvo(doc.id);});
+          passChat.title = id;
+          passChat.id = id;
+          const date = new Date(Number(data.time));//convert string date to actual date format
+          //console.log(date);
+          passChat.innerText = date;
+          chatsMobile.appendChild(passChat);
+          //console.log(id);
+          //console.log(JSON.stringify(data));
+        });
+
+    } catch (error) {
+      console.log(`There was an error loading the messages: ${error}`);
+      alert(`There was an error loading the messages: ${error}`);
+    }
+      
+    }
+
+  } catch (error) {
+    
+      console.error("Error reading document: ", error);
+  }
+    
+}
+
+
 let newConvoBtn = document.getElementById('cNconvo');
 newConvoBtn.addEventListener('click', () => {createNewCOnversation();});
 
 getConvos();
+getConvosMview();
 console.log('DOne')
+hljs.highlightAll()

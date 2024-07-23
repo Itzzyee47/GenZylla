@@ -304,6 +304,7 @@ async function loadMessages(id) {
       const time = dox.time;
       createMessageBubble(sender, message);
     });
+    hljs.highlightAll()
   }
   if (chatHistory.children.length >= 1) {
     document.getElementById('p1').style.display = "none";
@@ -394,6 +395,8 @@ async function getConvos(){
     
 
 }
+
+hljs.highlightAll()
 let newConvoBtn = document.getElementById('cNconvo');
 newConvoBtn.addEventListener('click', () => {alert('Function disabled for testing purposes!')});
 

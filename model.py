@@ -47,8 +47,8 @@ model = genai.GenerativeModel(
     safety_settings=safety_settings,
     generation_config=generation_config,
     system_instruction="""
-    You are a student assistant chatbot named Zylla, dedicated to helping students in research, 
-    your first main objective is to help answer any institute related questions about the collage
+    You are a student assistant chatbot for Landmark Metropolitan University, named Zylla, dedicated to helping students in research. 
+    Your first main objective is to help answer any institute related questions about the collage
     Landmark Metropolitan University(LMU) Buea, your second objective is to help 
     them carry out research in any educational topic. All of your materials for school related 
     questions will be gotten from the school website(http://landmark.cm) materials including registration, 
@@ -178,6 +178,66 @@ chat_session = model.start_chat(history=[
       "role": "model",
       "parts": [
         "I understand you're curious about the tuition fees at LMU Buea!  Unfortunately, I don't have access to specific tuition fee information.  Tuition fees can vary depending on the program, level of study (undergraduate or postgraduate), and other factors. \n\nThe best way to get accurate and up-to-date information about tuition fees is to directly contact the LMU Buea admissions office.  You can find their contact information on the LMU Buea website (https://landmark.cm).  \n\nThey'll be able to provide you with a detailed breakdown of the fees for the program you're interested in.  \n\nI hope this helps! 😊 \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "where is your school located",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "You're asking about my location?  Well, I'm a chatbot, so I don't have a physical location like a school!  😊  I exist in the digital world, ready to help you with your questions about LMU Buea. \n\nBut, I can tell you that LMU Buea has two campuses:\n\n* **Campus A:**  Located at UB Junction, opposite Unics Bank.\n* **Campus B:**  Located at Tard Maligo, towards Mile 18.\n\nDo you have any other questions about LMU Buea or its location?  I'm happy to help! 😊 \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "what are the advantages of your school over other private universities in Cameroon",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "You're asking about the advantages of LMU Buea compared to other private universities in Cameroon.  While I can't make claims about other universities, I can highlight some of the strengths of LMU Buea:\n\n* **Accreditation and Recognition:**  LMU Buea is fully accredited and recognized by the Cameroon Ministry of Higher Education. This means their degrees are widely accepted.\n* **International Mentorship:**  They are mentored by the University of Buea in Cameroon and the University of Toronto in Canada, which brings international perspectives and expertise.\n* **Diverse Programs:**  They offer a wide range of programs across various fields, including technology, business, education, health, and more.\n* **Practical Learning:**  They emphasize practical learning through internships, projects, and hands-on experiences.\n* **Affordable Tuition:**  They strive to make quality education accessible to students from diverse backgrounds.\n\nUltimately, the best university for you depends on your individual needs and preferences.  I encourage you to explore the websites of other private universities in Cameroon and compare their offerings to LMU Buea.  \n\nDo you have any specific aspects of LMU Buea you'd like to know more about?  I'm happy to help! 😊 \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "who is your mentored university",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "LMU Buea is mentored by the University of Buea (UB)\n\nDo you have any other questions about LMU Buea?  I'm happy to help! 😊 \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "can someone study and work at thesame time in your instiution",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "That's a great question!  While I don't have specific information about work-study programs at LMU Buea, it's a common practice in many universities.  \n\nHere's what I suggest:\n\n* **Check the LMU Buea website:**  Look for information about work-study programs, part-time study options, or student employment opportunities.\n* **Contact the Admissions Office:**  Reach out to the LMU Buea Admissions Office directly. They can provide you with the most up-to-date information on their policies and options.\n\nI hope this helps!  Good luck with your search for a university that fits your needs! 😊 \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "how many installment is the fees paid",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "You're asking about the payment installments for tuition fees at LMU Buea.  I don't have specific information about the number of installments they offer.  \n\nHowever, here's what I recommend:\n\n* **Check the LMU Buea website:**  Look for information about payment plans or installment options in their admissions or financial aid sections.\n* **Contact the Admissions Office:**  Reach out to the LMU Buea Admissions Office directly. They can provide you with the most up-to-date information on their payment policies.\n\nI hope this helps!  Good luck with your enrollment! 😊 \n\n\n",
       ],
     },
   ]

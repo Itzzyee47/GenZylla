@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 0px 0px 0px 15%;;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -13,7 +13,7 @@ body {
     transition: 0.4s;
 }
 pre {
-    background-color: #171024f4;
+    background-color: #23241f;
     border-radius: 8px;
     padding: 20px;
     overflow: auto;
@@ -289,14 +289,21 @@ i:hover{
 }
 
 @media screen and (max-width: 600px) {
+    body{
+        padding: 0;
+    }
     .p1{
         font-size: 0.8rem;
         padding: 0 10%;
     }
     .chat-container {
-        width: 76%;
+        width: 83%;
         padding: 2px;
         justify-content: space-between;
+    }
+    .chat-container>ul{
+        padding:0;
+        margin:0;
     }
     .side-bar{
         display: none;
