@@ -489,7 +489,9 @@ async function getConvosMview(){
 
 
 let newConvoBtn = document.getElementById('cNconvo');
+let newConvoBtn2 = document.getElementById('cNconvo2');
 newConvoBtn.addEventListener('click', () => {createNewCOnversation();});
+newConvoBtn2.addEventListener('click', () => {createNewCOnversation();});
 
 getConvos();
 getConvosMview();
