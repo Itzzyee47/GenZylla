@@ -104,11 +104,10 @@ function getUserData() {
     });
 }
 getUserData();
-
+//Updated typewriter function....
 function applyTypewriterEffect(markdownContent, element) {
   // Convert the Markdown content to HTML
   const renderedHtml = marked(markdownContent);
-
   // Get the typewriter target element
   const typewriterTarget = element;
 
@@ -121,31 +120,41 @@ function applyTypewriterEffect(markdownContent, element) {
       delay: 8,
       cursor: '',
   });
+  let scrol = true;
+  // Function to scroll to the bottom
+  async function continuousScroll() {
+      while (scrol) {
+          chatHistory.scrollTop = chatHistory.scrollHeight;
+          await new Promise(resolve => setTimeout(resolve, 100)); // Adjust the delay as needed
+      }
+  }
+
+  // Start the continuous scroll function
+  const scrollPromise = continuousScroll();
 
   typewriter
       .typeString(renderedHtml)
-      .start()
       .callFunction(() => {
           // Optionally apply syntax highlighting after typing
           document.querySelectorAll('pre code').forEach((block) => {
-              hljs.highlightElement(block); 
+              hljs.highlightElement(block);
           });
+      })
+      .start()
+      .callFunction(() => {
+          // Stop continuous scrolling when typing is complete
+          scrollPromise.then(() => clearInterval(scrollPromise));
+          scrol = false;
       });
-      // Update scroll position as text is being typed
-    typewriter.options.onCreate = () => {
-      chatHistory.scrollTop = chatHistory.scrollHeight;
-    };
-        
-       
-      
-  }
 
   hljs.highlightAll();
 
-marked.setOptions({
-  mangle: false,
-  headerIds: false
-});
+  marked.setOptions({
+      mangle: false,
+      headerIds: false
+  });
+}
+
 
 const chatHistory = document.getElementById('chat-history');
 const userMessageInput = document.getElementById('user-message');
@@ -281,8 +290,9 @@ document.getElementById('message-form').addEventListener('submit', (event) => {
         setTimeout(() => {
           loader.style.display = "none";
           chatHistory.scrollTop = chatHistory.scrollHeight;
-         
+          
         }, 4000);
+        
         
         
       })
@@ -438,6 +448,7 @@ async function getConvos(){
     }else {
        // No conversations found, create a new one
        createNewCOnversation();
+       location.reload();
     
     }
 

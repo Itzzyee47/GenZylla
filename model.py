@@ -177,7 +177,7 @@ chat_session = model.start_chat(history=[
     {
       "role": "model",
       "parts": [
-        "I understand you're curious about the tuition fees at LMU Buea!  Unfortunately, I don't have access to specific tuition fee information.  Tuition fees can vary depending on the program, level of study (undergraduate or postgraduate), and other factors. \n\nThe best way to get accurate and up-to-date information about tuition fees is to directly contact the LMU Buea admissions office.  You can find their contact information on the LMU Buea website (https://landmark.cm).  \n\nThey'll be able to provide you with a detailed breakdown of the fees for the program you're interested in.  \n\nI hope this helps! 😊 \n",
+        "### Here is the tuition and Fees for Landmark Metropolitan University's Programs\n\n**HND Programs**  \n1. **Engineering:** 350,000 XAF (2 years)  \n2. **Business:** 300,000 XAF (2 years)  \n3. **Transport & Logistic, Shipping:** 325,000 XAF (2 years)  \n4. **Medical and Biomedical Sciences:** 350,000 XAF (3 years)  \n5. **Agriculture:** 350,000 XAF (2 years)  \n**Admission Fee:** 30,000 XAF  \n\n**Straight Bachelor's Programs**  \n1. **BSc/BBA:** 400,000 XAF (3 years)  \n2. **BTech Engineering:** 450,000 XAF (3 years)  \n**Admission Fee:** 30,000 XAF  \n\n**Top-up Programs**  \n1. **BTech Engineering:** 450,000 XAF (1 year)  \n2. **BSc/BBA Business Management:** 400,000 XAF (1 year)  \n3. **BSc/BBA Transport and Logistic, Shipping:** 425,000 XAF (1 year)  \n4. **BSc Medical and Biomedical Sciences:** 450,000 XAF (1 year)  \n5. **Agriculture:** 450,000 XAF (1 year)  \n**Admission Fee:** 30,000 XAF  \n\n**Graduate Programs**  \n1. **MSc/MBA:** 650,000 XAF (2 years)  \n2. **MTech:** 650,000 XAF (1 year)  \n**Admission Fee:** 50,000 XAF  \n\n**Short Programs**  \n**Tuition:** Varies  \n**Admission Fee:** 15,000 XAF  \n**Program Length:** Maximum 1 year  \n\n**General Admission Requirements**  \n- At least 2 Cameroon GCE A-Level/4 Cameroon GCE TAVC/Pass in Cameroon BACC/International Equivalent Certificate  \n- 4 Passport Size Photographs  \n- Birth Certificate  \n- Specific subject requirements may apply to some programs\n\nFor detailed information, visit the [Landmark Metropolitan University Tuition Fee page](https://landmark.cm/tuition-fee).\n",
       ],
     },
     {
@@ -237,7 +237,7 @@ chat_session = model.start_chat(history=[
     {
       "role": "model",
       "parts": [
-        "You're asking about the payment installments for tuition fees at LMU Buea.  I don't have specific information about the number of installments they offer.  \n\nHowever, here's what I recommend:\n\n* **Check the LMU Buea website:**  Look for information about payment plans or installment options in their admissions or financial aid sections.\n* **Contact the Admissions Office:**  Reach out to the LMU Buea Admissions Office directly. They can provide you with the most up-to-date information on their payment policies.\n\nI hope this helps!  Good luck with your enrollment! 😊 \n\n\n",
+        "You're asking about the payment installments for tuition fees at LMU Buea. \n\nFees are payed in two installments after registration, but special cases are granted to those who reach out to the administration.\n\nFor a more uptodate respond I recommend you visit the administrative office. \n\nI hope this helps!  Good luck with your enrollment! 😊 \n\n\n",
       ],
     },
   ]

@@ -35,7 +35,7 @@ def startSession():
     session['user'] = email
     session['userID'] = uid
     
-    return jsonify({"started": 'yes'}), 202
+    return redirect(url_for(chat))
 
 @app.route("/endSession", methods=["POST","GET"])
 def endSession():
