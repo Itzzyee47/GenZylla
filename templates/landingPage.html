@@ -251,6 +251,7 @@
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
+                    endLoading();
                     alert('Error siging in please check you internet connectivity and try again', errorMessage);
                     // ..
                 });
@@ -320,6 +321,7 @@
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                endLoading();
                 alert(`Error signing in ${error}`);
             });
                
@@ -357,9 +359,11 @@
             const email = document.getElementById('Lemail').value;
 
             if (email){
+                startLoading();
                 sendPasswordResetEmail(auth,email)
                 .then(() => {
                     // Password reset email sent successfully
+                    endLoading();
                     alert('Password reset email sent. Check your inbox.');
                 })
                 .catch((error) => {
@@ -367,6 +371,7 @@
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     console.log(`Error (${errorCode}): ${errorMessage}`);
+                    endLoading();
                     alert(`Failed to send password reset email: ${errorMessage}`);
                 });
             }else{
