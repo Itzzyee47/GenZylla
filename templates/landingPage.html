@@ -347,7 +347,10 @@
               
                 try {
                   const response = await fetch(url, options);
-                  location.reload();
+                  if(response.ok){
+                    location.reload();
+                  }
+                  
                   
                 } catch (error) {
                   console.error("Error sending data:", error);
