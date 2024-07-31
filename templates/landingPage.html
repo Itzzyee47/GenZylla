@@ -246,6 +246,7 @@
                     // clear input fields
                     e.value,cpsw.value,psw.value = "";
                     endLoading();
+                    goto('/chat');
                     
                 })
                 .catch((error) => {
@@ -318,6 +319,7 @@
                 // create user session in python and ridirect to chatpage..
                 sendUserData(user.uid, user.email);
                 endLoading();
+                goto('/chat');
             })
             .catch((error) => {
                 const errorCode = error.code;

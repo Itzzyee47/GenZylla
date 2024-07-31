@@ -1,4 +1,5 @@
-from flask import Flask, request, redirect, render_template,jsonify,url_for,session,flash
+from flask import Flask, request, redirect, render_template,jsonify,url_for,session
+from flask_cors import CORS
 from model import getResponds
 from time import *
 import json
@@ -6,6 +7,7 @@ app = Flask(__name__)
 
 app.secret_key = 'ndoqwi3923jd'
 
+cors = CORS(app)
 
 def login_required(func):
     def wrapper_func(*args, **kwargs):
@@ -35,7 +37,7 @@ def startSession():
     session['user'] = email
     session['userID'] = uid
     
-    return redirect(url_for(chat))
+    return 200
 
 @app.route("/endSession", methods=["POST","GET"])
 def endSession():

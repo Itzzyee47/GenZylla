@@ -225,7 +225,7 @@ chat_session = model.start_chat(history=[
     {
       "role": "model",
       "parts": [
-        "That's a great question!  While I don't have specific information about work-study programs at LMU Buea, it's a common practice in many universities.  \n\nHere's what I suggest:\n\n* **Check the LMU Buea website:**  Look for information about work-study programs, part-time study options, or student employment opportunities.\n* **Contact the Admissions Office:**  Reach out to the LMU Buea Admissions Office directly. They can provide you with the most up-to-date information on their policies and options.\n\nI hope this helps!  Good luck with your search for a university that fits your needs! 😊 \n",
+        "That's a great question!  While I don't have specific information about work-study programs at LMU Buea, it's a common practice in many universities.  \n\nHere's what our study program is like:\n\n* **BTech programs:**  Our Btech programs for third years start at midday giving them time for prior activites\n* **Post graduate programs:**  Our post graduate programs start from 4:00pm, giving them time for prior activities considering that most of them are employed.\n\n I would highly recommend you get in touch with the administration for a detailed evaluation of your options, I hope this helps!  Good luck with your search! 😊\n",
       ],
     },
     {

@@ -26,7 +26,7 @@
             <img src="" alt="profileImage" class="pp" id="User-picture">
             <text id="userName"></text>
             <div>
-                <button>Manage Profile</button><button>Leave a review</button>
+                <button class="button-M">Manage Profile</button><button class="button-R" onclick="document.getElementById('id03').style.display='flex';hideProfile()">Leave a review</button>
             </div>
         </div>
     </div>
@@ -87,6 +87,16 @@
 
         </div>
     </div>
+
+    <!-- The Modal for login -->
+    <div id="id03" class="modal">
+        <form action="" id="review-form">
+            <h2>Leave a review</h2><br>
+            <textarea name="" id="" style="width: 80%; height: 70px;"></textarea><br>
+            <button type="submit">Submit</button><br>
+        </form>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked-mangle/dist/marked-mangle.min.js"></script>
@@ -155,6 +165,13 @@
             logo.style.zIndex = '';
             logo.style.webkitTextStroke = '';
           }
+          var modal = document.getElementById('id03');
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+            modal.style.display = "none";
+            }
+        }
 
     </script>
 

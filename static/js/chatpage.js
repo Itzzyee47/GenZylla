@@ -32,10 +32,11 @@ const db = getFirestore(app);
 function signOutUser(){
     signOut(auth)
     .then(() => {
+    goto('/');
     console.log('Signed out successfully');
     // Update UI to reflect signed-out state (e.g., hide user info, show sign-in button)
     signUserOut()
-    goto('/');
+    
     })
     .catch((error) => {
     console.error('Error signing out:', error);
