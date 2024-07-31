@@ -29,6 +29,7 @@
     {% if message %}
             <script>
                 alert('Please login or signup');
+                
             </script>
     {% endif %}
 
@@ -71,10 +72,9 @@
             
            <div class="welcomeText">
             <h1 class="I1">Hi there stranger!</h1>
-            <h3 class="I2"> Welcome to Landmark's Student Assistant ChatBot,</h3>
-            <div class="prase">
-                Sign up for a world of fun and learning with Landmark's AI chatbot. <br>
-                For all your questions concering the institude Landmark, sign up and ask here.
+            <h3 class="I2" style="margin-top: 2px; color: #313131;"> Welcome to Landmark's Student Assistant ChatBot,</h3>
+            <div class="prase" style="color: gray; font-style: oblique;">
+                Sign up for a world of fun and learning, and for all your questions concering the institude of Landmark Buea, ask Landmark's AI chatbot.
             </div>
             <button id="startBTN" onclick="goto('/chat')">
                 Get started
@@ -155,12 +155,15 @@
 
     <!-- Login form Content -->
     <form class="modal-content animate" action="/" id="signUp">
-        <div class="logo" style="display: flex;justify-content: center;margin: 10px 0px;font-size: 2rem;">
-            <h1>SIGN-UP</h1>
+        <div class="logo" style="display: flex;justify-content: center;">
+            <h1 style="font-size:2.2rem;">SIGN-UP</h1>
         </div>
         <div class="container">
         <label for="email"><b>Email</b></label>
         <input type="email" placeholder="Enter your email" name="email" id="Semail" required>
+
+        <label for="matricle"><b>Matricle</b></label>
+        <input type="text" placeholder="Enter your student matricle" name="matricle" id="Smatricle" required>
 
         <label for="password"><b>Password</b></label>
         <input type="password" placeholder="Enter your password" name="password" id="Sp1" required>
@@ -318,8 +321,8 @@
                 e.value,psw.value = "";
                 // create user session in python and ridirect to chatpage..
                 sendUserData(user.uid, user.email);
-                endLoading();
                 goto('/chat');
+                endLoading();
             })
             .catch((error) => {
                 const errorCode = error.code;

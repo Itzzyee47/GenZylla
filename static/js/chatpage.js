@@ -358,6 +358,7 @@ async function loadMessages(id) {
   if (querySnapshot.empty){
 
     chatHistory.innerHTML = " "; //clear the chat history
+    loader.style.display = "none";
 
   }else{
     querySnapshot.forEach((doc) => {
@@ -375,23 +376,27 @@ async function loadMessages(id) {
     document.getElementById('p1').style.display = "none";
   }
   chatHistory.scrollTop = chatHistory.scrollHeight;
+  loader.style.display = "none";
 }
 
 
 //localStorage.clear();
 async function createNewCOnversation(){
-  
+  loader.style.display = "block";
   const time = timeStamp();
   await addDoc(collection(db, "conversations"), {
       user: currentUser,
       time: `${time}`
   });
-
-  const querySnapshot = await getDocs(query(collection(db, "conversations"),where("time", "==", time), limit(1)));
-  const doc = querySnapshot.docs[0];
+  
+  const querySnapshot = await getDocs(query(collection(db, "conversations"),where("time", "==", `${time}`)));
+  const doc = querySnapshot.docs;
+  console.log(doc[0].id);
   // Setting the current conversations id to the newly created conversation... 
-  Convo.attributes[2].textContent = doc.id;
+  Convo.attributes[2].textContent = doc[0].id;
   chatHistory.innerHTML = ""; //Clear chathistory to start new conversation..
+  alert('New conversation started');
+  loader.style.display = "none";
 }
 
 async function loadConvo(id){
@@ -402,6 +407,7 @@ async function loadConvo(id){
     Convo.attributes[2].textContent = id;
     
     loadMessages(id);
+    closeNav();
 
   } catch (error) {
     console.log(`There was an error loading: ${error}`);
@@ -412,7 +418,8 @@ async function getConvos(){
   try {
     
     const querySnapshot = await getDocs(query(collection(db, "conversations"),where("user", "==", currentUser)));
-    
+  
+
     if (!querySnapshot.empty) {
       //load all conversations in recent convo list...
       try {
@@ -449,7 +456,7 @@ async function getConvos(){
     }else {
        // No conversations found, create a new one
        createNewCOnversation();
-       location.reload();
+       
     
     }
 
@@ -504,6 +511,7 @@ let newConvoBtn = document.getElementById('cNconvo');
 let newConvoBtn2 = document.getElementById('cNconvo2');
 newConvoBtn.addEventListener('click', () => {createNewCOnversation();});
 newConvoBtn2.addEventListener('click', () => {createNewCOnversation();});
+
 
 getConvos();
 getConvosMview();

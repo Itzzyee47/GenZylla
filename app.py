@@ -11,7 +11,7 @@ cors = CORS(app)
 
 def login_required(func):
     def wrapper_func(*args, **kwargs):
-        if 'user' in session:
+        if 'user' not in session:
             return func(*args, **kwargs)
             
         data = {"message":"Please login or signup"}
@@ -28,7 +28,7 @@ def index():
 
     return render_template("landingPage.html")
 
-@app.route("/startSession", methods=["POST"])
+@app.route("/startSession", methods=["POST", "GET"])
 def startSession():
     raw_data = request.data
     data = json.loads(raw_data)
@@ -37,7 +37,7 @@ def startSession():
     session['user'] = email
     session['userID'] = uid
     
-    return 200
+    return redirect(url_for(chat))
 
 @app.route("/endSession", methods=["POST","GET"])
 def endSession():
