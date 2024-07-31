@@ -371,16 +371,20 @@ form {
         height: 100%
     }
     .welcomeText{
-        width: 80%;
+        width: 95%;
         margin-left: 0;
         margin-top: 1rem;
-        padding: 0 10%;
+        padding: 0 7px;
     }
     .I2 {
         font-size: 1.5rem;
     }
     .I1{
         margin-top: 12vw;
+        line-height: 60px;
+    }
+    .prase {
+        margin-top: 1rem;
     }
     .welImg{
         width: 100%;
@@ -404,8 +408,7 @@ form {
     }
     .logo{
         font-size: 2.1rem;
-        margin-left: 2%;
-        margin-bottom: 10px;
+       
     }
     .pages{
         font-weight: 700;

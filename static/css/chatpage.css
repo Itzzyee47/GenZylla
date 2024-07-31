@@ -362,13 +362,16 @@ i:hover{
         padding: 0 10%;
     }
     .chat-container {
-        width: 83%;
+        width: 88%;
         padding: 2px;
         justify-content: space-between;
     }
     .chat-container>ul{
         padding:0;
         margin:0;
+    }
+    .convo {
+        width: 90%;
     }
     .side-bar{
         display: none;
