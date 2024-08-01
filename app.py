@@ -11,12 +11,13 @@ cors = CORS(app)
 
 def login_required(func):
     def wrapper_func(*args, **kwargs):
-        if 'user' not in session:
-            return func(*args, **kwargs)
-            
-        data = {"message":"Please login or signup"}
         
-        return render_template("landingPage.html",**data)
+        if 'user' in session:
+            return func(*args, **kwargs)
+        else:
+            data = {"message":"Please login or signup"}
+            
+            return render_template("landingPage.html",**data)
     
     wrapper_func.__name__ = func.__name__  # Preserve the original function name
     return wrapper_func
