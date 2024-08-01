@@ -38,7 +38,7 @@ def startSession():
     session['user'] = email
     session['userID'] = uid
     
-    return redirect(url_for(chat))
+    return redirect(url_for('chat'))
 
 @app.route("/endSession", methods=["POST","GET"])
 def endSession():
@@ -82,3 +82,4 @@ def notFound(e):
 
 if __name__ == "__main__":
     app.run(host='localhost',debug=True, port=8080)
+
