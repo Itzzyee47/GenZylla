@@ -291,9 +291,8 @@ document.getElementById('message-form').addEventListener('submit', (event) => {
         setTimeout(() => {
           loader.style.display = "none";
           chatHistory.scrollTop = chatHistory.scrollHeight;
-          
+         
         }, 4000);
-        
         
         
       })

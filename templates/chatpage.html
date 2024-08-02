@@ -26,7 +26,7 @@
             <img src="" alt="profileImage" class="pp" id="User-picture">
             <text id="userName"></text>
             <div>
-                <button class="button-M">Manage Profile</button>
+                <button class="button-M" onclick="goto('/manageProfile')">Manage Profile</button>
                 <button class="button-R" onclick="document.getElementById('id03').style.display='flex';hideProfile()">Leave a review</button>
             </div>
         </div>
@@ -70,9 +70,9 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="c1" style="width:95%; height:98vh; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="c1" style="width:95%; height:93vh; display: flex; flex-direction: column; justify-content: space-between;">
 
-            <div class="c2" style="background-color: #0707076e; border-radius: 6px;">
+            <div class="c2" style="background-color: #0707076e; border-radius: 6px; max-height: 400px; overflow: auto; margin-top: 15px;">
                <ul id="allConvosMobile" style="list-style: none;padding-inline-start: 10px;">
                 <div style="margin-bottom: 12px; font-size:1rem;">Recent</div>
                     <li  class="hiddenTxt convo">

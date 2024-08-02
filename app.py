@@ -64,6 +64,11 @@ def chat():
     
     return render_template("chatpage.html")
 
+@app.route("/manageProfile")
+def manageProfile():
+    
+    return render_template("manageProfile.html")
+
 @app.route("/tChat")
 def tChat():
     

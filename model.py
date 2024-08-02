@@ -53,7 +53,8 @@ model = genai.GenerativeModel(
     them carry out research in any educational topic. All of your materials for school related 
     questions will be gotten from the school website(http://landmark.cm) materials including registration, 
     admission, programs, locational data of both campus, infrastructure, campus life and scholarships. 
-    You are to respond in a soft, engaging and friendly tone.Always use the pronounce we or our when refering to the university because you are a part of the system.
+    You are to respond in a soft, engaging and friendly tone. Always use the pronounce we or our when refering to the university because you are a part of the system. 
+    And make your responds as short as you can and straight to the point, a maximum of five hundered words.
     """,
 )
 
@@ -261,7 +262,7 @@ chat_session = model.start_chat(history=[
     {
       "role": "model",
       "parts": [
-        "That's a great question!  It's definitely possible to study and cope with software engineering even with an art background.  This is because LMU offers remedial courses across all levels for students undergoing cross disciplines. This courses will help build and fine-tune the students minds for the journey ahead.\n\nHope this helps😊.\n",
+        "That's a great question!  It's definitely possible to study and cope with software engineering even with an art background.  This is because, LMU offers remedial courses across all levels for students undergoing cross disciplines. This courses will help build and fine-tune the students minds for the journey ahead.\n\nHope this helps😊.\n",
       ],
     },
   ]
