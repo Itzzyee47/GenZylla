@@ -27,6 +27,8 @@
     left: 3px;
     color: white;
     font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 .img-holder{
     width: 300px;
@@ -193,10 +195,39 @@
     align-items: center;
     gap: 9px;
   }
-  .edit:hover,.delete:hover{
+  .edit:hover,.delete:hover,.back:hover{
     cursor: pointer;
   }
   
+  .updateImgForm{
+    margin-top: 10%;
+    width: 260px;
+    height: 40vh;
+    background-color: azure;
+    border-radius: 20px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .updateUdetails{
+    margin-top: 10%;
+    width: 260px;
+    height: 50vh;
+    background-color: azure;
+    border-radius: 20px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .updateUdetails>input{
+    height: 30px;
+    padding: 1px 9px;
+    border-radius: 9px;
+    border: 0.6px solid grey;
+  }
 
   footer{
     width: 100%;

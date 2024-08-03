@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="head">
-        <div class="back">
+        <div class="back" onclick="goBack()">
             &#9668; Back
         </div>
         <div class="bg-head">
@@ -41,7 +41,9 @@
                 <div class="profileImg">
                     <img src="../static/img/girl.png" alt="">
                 </div>
-                <div class="addPic">&#10133;</div>
+                <div class="addPic" onclick="document.getElementById('id02').style.display = 'flex';">
+                    &#10133;
+                </div>
             </div>
             <div class="userEmail">
                 testemail@gmail.com
@@ -58,7 +60,7 @@
                 <div class="data">
                     Gena
                 </div>
-                <div class="option">
+                <div class="option" onclick="document.getElementById('id03').style.display = 'flex';">
                     &#10133;
                 </div>
             </div>
@@ -71,7 +73,7 @@
                 <div class="data">
                     Zylla
                 </div>
-                <div class="option">
+                <div class="option" onclick="document.getElementById('id03').style.display = 'flex';">
                     &#10133;
                 </div>
             </div>
@@ -260,19 +262,46 @@
         </div>
     </div>
 
+    <div id="id02" class="modal">
+        <form class="updateImgForm" action="">
+            <h2 style="font-family:'Dosis', sans-serif; text-align:center;">
+                Update profile image
+            </h2>
+            <input type="file" name="udateImage" id="">
+            <button type="submit" class="button" style="align-self: center;"> Update </button>
+        </form>
+    </div>
+
+    <div id="id03" class="modal">
+        <form class="updateUdetails" action="">
+            <h2 style="font-family:'Dosis', sans-serif; text-align:center;">
+                Update your username
+            </h2>
+            <label for="firstName">FirstName:</label>
+            <input type="text" name="firstName" id="" value="Gena">
+            <label for="lasttName">LastName:</label>
+            <input type="text" name="lastName" id="" value="Zylla">
+            <button type="submit" class="button" style="align-self: center;"> Update </button>
+        </form>
+    </div>
 
     <script>
         var modal = document.getElementById('id01');
         var modal2 = document.getElementById('id02');
+        var modal3 = document.getElementById('id03');
         
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
-          if (event.target == modal || event.target == modal2) {
+          if (event.target == modal || event.target == modal2 || event.target == modal3) {
             modal.style.display = "none";
             modal2.style.display = "none";
-    
+            modal3.style.display = "none";
           }
         }
+
+        function goBack() {
+            window.history.back()
+          }
     </script>
 </body>
 </html>

@@ -402,6 +402,7 @@ async function loadConvo(id){
   console.log(id);
   try {
     chatHistory.innerHTML = ""; //Clear chathistory ..
+    loader.style.display = "flex";
     // Setting the current conversations id to the newly created conversation... 
     Convo.attributes[2].textContent = id;
     
@@ -415,9 +416,9 @@ async function loadConvo(id){
 
 async function getConvos(){  
   try {
-    
+    loader.style.display = "flex";
     const querySnapshot = await getDocs(query(collection(db, "conversations"),where("user", "==", currentUser)));
-  
+    
 
     if (!querySnapshot.empty) {
       //load all conversations in recent convo list...
@@ -440,23 +441,22 @@ async function getConvos(){
           console.log(JSON.stringify(data));
         });
 
-      // Load the messages of the latest conversation
-      const latestDoc = querySnapshot.docs[0];
-      console.log(latestDoc.id);
-      //load messages blonging to conversation of id....
-      Convo.attributes[2].textContent = latestDoc.id;
-      loadMessages(latestDoc.id);
+        // Load the messages of the latest conversation
+        const latestDoc = querySnapshot.docs[0];
+        console.log(latestDoc.id);
+        //load messages blonging to conversation of id....
+        Convo.attributes[2].textContent = latestDoc.id;
+        loadMessages(latestDoc.id);
 
-    } catch (error) {
-      console.log(`There was an error loading the messages: ${error}`);
-      alert(`There was an error loading the messages: ${error}`);
-    }
+      } catch (error) {
+        console.log(`There was an error loading the messages: ${error}`);
+        alert(`There was an error loading the messages: ${error}`);
+      }
       
     }else {
        // No conversations found, create a new one
        createNewCOnversation();
-       
-    
+
     }
 
   } catch (error) {

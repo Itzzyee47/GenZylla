@@ -108,9 +108,9 @@
                     <lottie-player src="https://lottie.host/abd3f40a-836c-4023-a268-da4097fa44de/cYOwxii3ma.json" background="transparent" speed="1" style="width: 100%; height: 100%" loop autoplay direction="1" mode="normal"></lottie-player>
                 </div>
                 <div class="aboutUs">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Accusamus voluptas doloribus cupiditate ipsum aperiam 
-                    alias quo odit ipsam, possimus magni.
+                    Ensuring safty and scalability by using cloud service providers
+                     to manage users and user data alike. 
+                    Avialable 24\7 with reliable data gotten from LMU administration.
                 </div>
             </div>
 
@@ -186,7 +186,7 @@
 
         <!-- The Modal for login -->
         <div id="id03" class="modal">
-            <div class="loader"></div>
+            <div class="loader"></div> 
         </div>
     
 
@@ -265,7 +265,7 @@
                 alert('Passwords donot match');
             }
 
-            async function sendUserData(userId, userEmail) {
+            function sendUserData(userId, userEmail) {
                 const url = "/startSession"; // Replace with your actual backend URL and endpoint
               
                 const data = {
@@ -282,16 +282,14 @@
                 };
               
                 try {
-                  const response = await fetch(url, options);
+                  const response = fetch(url, options);
                   if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}` );
                   }else{
                     goto('/chat')
                   }
               
-                  const responseData = await response.json();
-                  location.reload();
-                  console.log("Response from backend:", responseData);  // Handle response data
+                   // Handle response data
                 } catch (error) {
                   console.error("Error sending data:", error);
                 }
@@ -315,7 +313,7 @@
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
-                console.log(userCredential)
+                console.log("signedIn");
                 // create user session in js and python..
                 sessionStorage.setItem('user',user.email);
                 sessionStorage.setItem('userID',user.uid);
@@ -323,7 +321,7 @@
                 e.value,psw.value = "";
                 // create user session in python and ridirect to chatpage..
                 sendUserData(user.uid, user.email);
-                goto('/chat');
+                
                 endLoading();
             })
             .catch((error) => {
@@ -336,7 +334,7 @@
 
             
 
-            async function sendUserData(userId, userEmail) {
+            function sendUserData(userId, userEmail) {
                 const url = "/startSession"; // Replace with your actual backend URL and endpoint
               
                 const data = {
@@ -353,12 +351,13 @@
                 };
               
                 try {
-                  const response = await fetch(url, options);
-                  if(response.ok){
-                    location.reload();
-                  }
-                  
-                  
+                  fetch(url, options)
+                  .then(message => {
+                    if (message.ok){
+                        goto('/chat');
+                    }
+                    });
+                    
                 } catch (error) {
                   console.error("Error sending data:", error);
                 }

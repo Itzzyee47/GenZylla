@@ -37,8 +37,9 @@ def startSession():
     uid = data.get('uId')
     session['user'] = email
     session['userID'] = uid
+    message = {"response": "OK"}
     
-    return redirect(url_for('chat'))
+    return jsonify(message),200
 
 @app.route("/endSession", methods=["POST","GET"])
 def endSession():
@@ -65,6 +66,7 @@ def chat():
     return render_template("chatpage.html")
 
 @app.route("/manageProfile")
+@login_required
 def manageProfile():
     
     return render_template("manageProfile.html")
