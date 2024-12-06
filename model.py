@@ -172,7 +172,7 @@ chat_session = model.start_chat(history=[
     {
       "role": "user",
       "parts": [
-        "what is the tuition fee for studying in lmu",
+        "what is the fees or tuition for studying in lmu in other words how much does it cost to study in LMU",
       ],
     },
     {
